@@ -58,13 +58,29 @@
       gap: $space-6xl;
       font-family: $font-family-base;
       font-weight: $font-weight-regular;
+
+      img {
+        width: 100%;
+        max-width: $contact-image-max-width;
+        max-height: $contact-image-max-height;
+        height: auto;
+        object-fit: contain;
+      }
     }
+
+    .texto-contacto { font-weight: $font-weight-semibold; }
 
     ul {
       list-style: none;
       padding-left: 0;
       font-family: $font-family-base;
-      font-weight: $font-weight-regular;
+      font-weight: $font-weight-contact-data;
+      color: $color-purple;
+
+      .bi {
+        color: $color-purple;
+        margin-right: $space-xs;
+      }
     }
   }
 }
@@ -112,7 +128,7 @@
       display: flex;
       flex-direction: column;
       gap: $space-sm;
-      text-align: center;
+      text-align: left;
 
       > p:first-child { font-size: $font-size-md; }
     }
@@ -219,6 +235,7 @@ main {
     gap: $space-md;
     padding-left: 0;
     list-style: none;
+    text-align: left;
   }
 
   li {

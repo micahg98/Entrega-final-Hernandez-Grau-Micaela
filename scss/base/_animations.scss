@@ -78,13 +78,28 @@ main {
   }
 }
 
-.pagina-contacto main figure img {
+.pagina-contacto main figure {
   animation: image-reveal $animation-duration $animation-easing both;
+}
+
+.pagina-contacto main figure img {
   transition: box-shadow $transition-standard, transform $transition-standard;
 
   &:hover {
     box-shadow: $contact-image-shadow;
     transform: scale($contact-image-hover-scale);
+  }
+}
+
+@keyframes contact-message-reveal {
+  from {
+    opacity: 0;
+    transform: translateY($space-xs);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -173,6 +188,10 @@ main {
 
 .lista-formacion li:nth-child(4) strong {
   animation-delay: $about-list-delay * 3;
+}
+
+.pagina-contacto main .texto-contacto {
+  animation: contact-message-reveal $contact-message-duration $animation-easing $contact-message-delay both;
 }
 
 .pagina-contacto main ul li {

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300..800&display=swap");
 .card:focus, button:focus {
   outline: 1.5px solid #000000;
   outline-offset: 3px;
@@ -246,15 +246,28 @@ main {
     transform: scale(1);
   }
 }
-.pagina-contacto main figure img {
+.pagina-contacto main figure {
   animation: image-reveal 0.6s ease both;
+}
+
+.pagina-contacto main figure img {
   transition: box-shadow 0.35s ease, transform 0.35s ease;
 }
 .pagina-contacto main figure img:hover {
-  box-shadow: 0 0.75rem 1.5rem rgba(110, 42, 173, 0.24);
-  transform: scale(1.02);
+  box-shadow: 0 0.75rem 2rem rgba(110, 42, 173, 0.55);
+  transform: scale(1.04);
 }
 
+@keyframes contact-message-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(0.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 @keyframes contact-detail-reveal {
   from {
     opacity: 0;
@@ -333,6 +346,10 @@ main {
 
 .lista-formacion li:nth-child(4) strong {
   animation-delay: 0.36s;
+}
+
+.pagina-contacto main .texto-contacto {
+  animation: contact-message-reveal 0.9s ease 0.3s both;
 }
 
 .pagina-contacto main ul li {
@@ -602,11 +619,26 @@ main {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
 }
+.pagina-contacto main figure img {
+  width: 100%;
+  max-width: 450px;
+  max-height: 350px;
+  height: auto;
+  object-fit: contain;
+}
+.pagina-contacto main .texto-contacto {
+  font-weight: 600;
+}
 .pagina-contacto main ul {
   list-style: none;
   padding-left: 0;
   font-family: "Montserrat", sans-serif;
-  font-weight: 400;
+  font-weight: 550;
+  color: #6e2aad;
+}
+.pagina-contacto main ul .bi {
+  color: #6e2aad;
+  margin-right: 0.25rem;
 }
 
 .pagina-proyectos main,
@@ -647,7 +679,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  text-align: center;
+  text-align: left;
 }
 .pagina-inicio .seccion-presentacion-inicio .texto-presentacion-inicio > p:first-child {
   font-size: 1rem;
@@ -756,6 +788,7 @@ main {
   gap: 0.75rem;
   padding-left: 0;
   list-style: none;
+  text-align: left;
 }
 .seccion-servicios-inicio li {
   font-weight: 400;

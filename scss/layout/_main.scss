@@ -319,6 +319,72 @@ main {
   }
 }
 
+// Íconos de herramientas en fila
+.iconos-herramientas {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+
+  img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+  }
+}
+
+// Lista de tecnologías en fila
+.lista-centrada {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+
+  .list-group-item {
+    border-width: 1px;
+    border-radius: var(--bs-list-group-border-radius);
+  }
+}
+
+// Contenedor de herramientas con el mismo ancho que el resto
+.grid-herramientas {
+  width: min(100%, 60rem);
+}
+
+.lista-una-linea .list-group-item {
+  text-align: center;
+}
+
+// Lista en una sola línea desde tablet
+@media (min-width: 768px) {
+  .lista-una-linea {
+    flex-wrap: nowrap;
+
+    .list-group-item {
+      white-space: nowrap;
+    }
+  }
+}
+
+// Más espacio debajo de algunos títulos
+.formacion-contenedor .titulo-espaciado {
+  margin-bottom: 1.5rem;
+}
+
+// Punto violeta estilo lista
+.lista-puntos .list-group-item::before {
+  content: "";
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-right: $space-sm;
+  border-radius: 50%;
+  background-color: $color-purple;
+  vertical-align: middle;
+}
+
 .foto-presentacion {
   width: min($presentation-image-width, $presentation-image-max-width);
   margin: 0 auto;
